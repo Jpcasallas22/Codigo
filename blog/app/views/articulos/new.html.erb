@@ -1,7 +1,12 @@
 <h1>Nuevo Articulo</h1>
-<%= form_for :articulo do |f| %>
+<%= form_for :articulo, url: articulos_path do |f| %>
   <p>
-    <%= f.label :titular %><br/>
+    <%= f.label :titular %><br>
+      <%= f.text_field :titular %>
+  </p>
+
+  <p>
+    <%= f.label :contenido %><br/>
       <%= f.text_field :contenido %>
   </p>
   <p>

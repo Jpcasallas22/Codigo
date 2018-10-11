@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :articulos
+ resources :articulos
  
 
   # The priority is based upon order of creation: first created -> highest priority.

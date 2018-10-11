@@ -1,0 +1,10 @@
+<h1>Nuevo Articulo</h1>
+<%= form_for :articulo do |f| %>
+  <p>
+    <%= f.label :titular %><br/>
+      <%= f.text_field :contenido %>
+  </p>
+  <p>
+    <%= f.submit 'Guardar Articulo'%>
+  </p>
+  <% end %>

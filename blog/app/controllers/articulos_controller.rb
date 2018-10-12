@@ -1,10 +1,13 @@
+
 class ArticulosController < ApplicationController
   def new 
   
   end
   
     def create 
-    render plain: params[:articulo].inspect
+  @articulo = Articulo.new(params[:articulo])
+  @articulo.save
+  redirect_to @articulo
       
   end
 end

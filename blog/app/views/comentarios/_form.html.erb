@@ -1,0 +1,13 @@
+<%= form_for([@articulo, @articulo.comentarios.build]) do |f| %>
+  <p>
+    <%= f.label :comentarista %><br>
+    <%= f.text_field :comentarista %>
+  </p>
+  <p>
+    <%= f.label :contenido %><br>
+    <%= f.text_area :contenido %>
+  </p>
+  <p>
+    <%= f.submit 'Guardar Comentario' %>
+  </p>
+<% end %>

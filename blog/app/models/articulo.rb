@@ -1,4 +1,5 @@
 class Articulo < ActiveRecord::Base
-  validates :titular,presence: true,
-  length: {minimun: 6}
+  has_many :comentarios, dependent: :destroy
+  validates :titular, presence: true,
+                    length: { minimum: 5 }
 end

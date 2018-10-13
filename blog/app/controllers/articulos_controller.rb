@@ -11,16 +11,17 @@ class ArticulosController < ApplicationController
   def new 
   end
   
-    def create 
-      @articulo = Articulo.new(articulo_params)
-      if  @articulo.save
-        redirect_to @articulo
-      else 
-        render 'new'
-      end
-      
-      private 
+  def create 
+    @articulo = Articulo.new(articulo_params)
+    if  @articulo.save
+      redirect_to @articulo
+    else 
+      render 'new'
+    end
+  end  
+  
+  private 
   def articulo_params
-params.require(:articulo).permit(:titular, :contenido)
-end
+    params.require(:articulo).permit(:titular, :contenido)
+  end
 end

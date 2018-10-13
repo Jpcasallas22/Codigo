@@ -1,0 +1,15 @@
+<h1>!Hola, Rails¡</h1>
+<%=link_to 'Nuevo Articulo', new_articulo_path %>
+<table>
+  <tr>
+    <th>Titular</th>
+    <th>Contenido</th>
+    </tr>
+ 
+  <% @articulos.each do |articulo| %>
+  <tr>
+    <td><%= articulo.titular %></td>
+    <td><%= articulo.contenido %></td>
+  </tr>
+<% end%>
+</table>

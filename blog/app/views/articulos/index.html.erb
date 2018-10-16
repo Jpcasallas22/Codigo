@@ -12,6 +12,9 @@
     <td><%= articulo.contenido %></td>
     <td><%= link_to 'Ver',articulo_path(articulo) %></td>
      <td><%= link_to 'Editar',edit_articulo_path(articulo) %></td>
+    <td><%=link_to 'Borrar', articulo_path(articulo), method: :delete, data: {confirm: 'Estas Seguro?'} %></td>
+                                
+               
   </tr>
 <% end%>
 </table>

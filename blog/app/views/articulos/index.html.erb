@@ -10,6 +10,8 @@
   <tr>
     <td><%= articulo.titular %></td>
     <td><%= articulo.contenido %></td>
+    <td><%= link_to 'Ver',articulo_path(articulo) %></td>
+     <td><%= link_to 'Editar',edit_articulo_path(articulo) %></td>
   </tr>
 <% end%>
 </table>

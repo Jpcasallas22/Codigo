@@ -1,0 +1,34 @@
+<h1>Editando un artículo</h1>
+ 
+<%= form_for :articulo, url: articulo_path(@articulo), method: :patch do |f| %>
+ 
+  <% if @articulo.errors.any? %>
+    <div id="error_explanation">
+    <h2>
+        <%= pluralize(@articulo.errors.count, "error") %> han impedido que el artículo sea grabado:
+    </h2>
+      <ul>
+        <% @articulo.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :titular %><br>
+    <%= f.text_field :titular %>
+  </p>
+ 
+  <p>
+    <%= f.label :contenido %><br>
+    <%= f.text_area :contenido %>
+  </p>
+ 
+  <p>
+    <%= f.submit 'Guardar Artículo' %>
+  </p>
+ 
+<% end %>
+ 
+<%= link_to 'Volver', articulos_path %>

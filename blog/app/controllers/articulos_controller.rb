@@ -1,14 +1,18 @@
 
 class ArticulosController < ApplicationController
-
   def index
-  @articulos = Articulo.all
+    @articulos = Articulo.all
   end 
-  def show
-    @articulo = Articulo.find(params[:id])
-  end
   
-  def new 
+   def show
+    @articulo = Articulo.find(params[:id])
+   end
+  
+   def new 
+    @articulo = Articulo.new
+    end
+  
+  def edit
   end
   
   def create 

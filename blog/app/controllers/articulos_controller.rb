@@ -7,6 +7,7 @@ class ArticulosController < ApplicationController
 
    def show
     @articulo = Articulo.find(params[:id])
+     puts @articulo.titular
   end	  
   
     def new 
@@ -36,7 +37,7 @@ class ArticulosController < ApplicationController
   
   def destroy
   @articulo = Articulo.find(params[:id])
-  @rticulo.destroy
+  @articulo.destroy
     redirect_to articulos_path
   end
   

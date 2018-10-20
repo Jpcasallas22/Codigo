@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181011020428) do
+ActiveRecord::Schema.define(version: 20181016165511) do
 
   create_table "articulos", force: true do |t|
     t.string   "titular"
@@ -19,5 +19,15 @@ ActiveRecord::Schema.define(version: 20181011020428) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "comentarios", force: true do |t|
+    t.string   "comentarista"
+    t.text     "contenido"
+    t.integer  "articulo_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "comentarios", ["articulo_id"], name: "index_comentarios_on_articulo_id"
 
 end

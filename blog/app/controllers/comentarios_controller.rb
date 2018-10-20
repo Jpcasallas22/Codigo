@@ -1,6 +1,6 @@
 class ComentariosController < ApplicationController
- http_basic_authenticate_with name: "Juan", password: "123", except: [:index, :show]
-  http_basic_authenticate_with name: "Juan", password: "123", only: :destroy
+ 
+   http_basic_authenticate_with name: "Juan", password: "123", except: [:index, :show]
   
   def index
     @articulos = Articulo.all

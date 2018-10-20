@@ -9,32 +9,10 @@
 </p>
  
 <h2>Comentarios</h2>
-<% @articulo.comentarios.each do |comentario| %>
-  <p>
-    <strong>Comentarista:</strong>
-    <%= comentario.comentarista %>
-  </p>
+<%= render @articulo.comentarios %>
  
-  <p>
-    <strong>Comentario:</strong>
-    <%= comentario.contenido %>
-  </p>
-<% end %>
- 
-<h2>Añadir comentario:</h2>
-<%= form_for([@articulo, @articulo.comentarios.build]) do |f| %>
-  <p>
-    <%= f.label :comentarista %><br>
-    <%= f.text_field :comentarista %>
-  </p>
-  <p>
-    <%= f.label :contenido %><br>
-    <%= f.text_area :contenido %>
-  </p>
-  <p>
-    <%= f.submit 'Guardar Comentario' %>
-  </p>
-<% end %>
+<h2>Añade un comentario:</h2>
+<%= render 'comentarios/form' %>
  
 <%= link_to 'Editar Artículo', edit_articulo_path(@articulo) %> |
-<%= link_to 'Volver a Artículos', articulos_path %>
+<%= link_to 'Volver a Articulos', articulos_path %>
